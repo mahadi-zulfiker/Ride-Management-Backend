@@ -15,8 +15,10 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-// Connect to MongoDB
-connectDB();
+connectDB().catch((err) => {
+  logger.error('MongoDB connection error:', err);
+  process.exit(1); // Exit if connection fails
+});
 
 // Routes
 app.use('/auth', authRoutes);
@@ -30,3 +32,5 @@ app.use(errorHandler);
 app.listen(PORT, () => {
   logger.info(`Server running on port ${PORT}`);
 });
+
+export default app;

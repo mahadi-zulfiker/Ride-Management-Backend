@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const ride_controller_1 = require("./ride.controller");
+const auth_1 = require("../../middlewares/auth");
+const role_1 = require("../../middlewares/role");
+const router = (0, express_1.Router)();
+router.post('/request', auth_1.auth, (0, role_1.restrictTo)('rider'), ride_controller_1.requestRideController);
+router.patch('/:id/cancel', auth_1.auth, (0, role_1.restrictTo)('rider'), ride_controller_1.cancelRideController);
+router.patch('/:id/accept', auth_1.auth, (0, role_1.restrictTo)('driver'), ride_controller_1.acceptRideController);
+router.patch('/:id/status', auth_1.auth, (0, role_1.restrictTo)('driver'), ride_controller_1.updateRideStatusController);
+router.get('/me', auth_1.auth, (0, role_1.restrictTo)('rider'), ride_controller_1.getRiderHistoryController);
+router.get('/', auth_1.auth, (0, role_1.restrictTo)('admin'), ride_controller_1.getAllRidesController);
+exports.default = router;
