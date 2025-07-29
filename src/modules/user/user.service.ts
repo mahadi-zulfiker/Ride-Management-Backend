@@ -1,5 +1,4 @@
 import User from './user.model';
-import { logger } from '../../utils/logger';
 
 export const getAllUsers = async () => {
   return await User.find().select('-password');

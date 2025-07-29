@@ -1,6 +1,5 @@
 import User from '../user/user.model';
 import Ride from '../ride/ride.model';
-import { logger } from '../../utils/logger';
 
 export const setAvailability = async (userId: string, isOnline: boolean) => {
   const user = await User.findById(userId);

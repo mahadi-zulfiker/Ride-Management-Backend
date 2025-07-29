@@ -10,8 +10,8 @@ const userSchema = new Schema({
     type: { type: String },
     licensePlate: { type: String }
   },
-  isApproved: { type: Boolean, default: true }, // False for drivers by default
-  isOnline: { type: Boolean, default: false } // For drivers
+  isApproved: { type: Boolean, default: true },
+  isOnline: { type: Boolean, default: false }
 });
 
 export default model('User', userSchema);

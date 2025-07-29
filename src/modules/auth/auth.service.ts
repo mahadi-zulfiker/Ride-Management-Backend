@@ -1,7 +1,6 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import User from '../user/user.model';
-import { logger } from '../../utils/logger';
 
 export const register = async (data: {
   email: string;

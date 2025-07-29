@@ -1,6 +1,5 @@
 import Ride from './ride.model';
 import User from '../user/user.model';
-import { logger } from '../../utils/logger';
 
 export const requestRide = async (riderId: string, pickup: { latitude: number; longitude: number }, destination: { latitude: number; longitude: number }) => {
   const rider = await User.findById(riderId);
@@ -83,7 +82,7 @@ export const updateRideStatus = async (rideId: string, driverId: string, status:
   ride.status = status;
   ride.statusHistory.push({ status });
   if (status === 'completed') {
-    ride.fare = Math.random() * 100; // Simplified fare calculation
+    ride.fare = Math.random() * 100;
   }
   await ride.save();
   return ride;
