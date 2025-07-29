@@ -167,16 +167,16 @@ Testing with Postman
     *   Create a Postman environment named `RideBookingAPI` with:
         
             {
-                                        "baseUrl": "http://localhost:3000",
-                                        "riderToken": "",
-                                        "driverToken": "",
-                                        "adminToken": "",
-                                        "rideId": "",
-                                        "riderId": "",
-                                        "driverId": "",
-                                        "unapprovedDriverId": "",
-                                        "unapprovedDriverToken": ""
-                                    }
+               "baseUrl": "http://localhost:3000",
+                "riderToken": "",
+                "driverToken": "",
+                "adminToken": "",
+                "rideId": "",
+                "riderId": "",
+                "driverId": "",
+                "unapprovedDriverId": "",
+                "unapprovedDriverToken": ""
+            }
         
 3.  **Testing Flow**:
     *   **Register Users**: Run `Register Rider`, `Register Driver`, and `Register Admin`.
