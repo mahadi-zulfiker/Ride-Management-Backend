@@ -29,6 +29,10 @@ app.use('/rides', rideRoutes);
 // Error Handler
 app.use(errorHandler);
 
+app.get('/', (req, res) => {
+  res.send('Ride Booking API is running 🚀');
+});
+
 app.listen(PORT, () => {
   logger.info(`Server running on port ${PORT}`);
 });
