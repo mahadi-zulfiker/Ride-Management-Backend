@@ -173,9 +173,7 @@ Testing with Postman
                 "adminToken": "",
                 "rideId": "",
                 "riderId": "",
-                "driverId": "",
-                "unapprovedDriverId": "",
-                "unapprovedDriverToken": ""
+                "driverId": ""
             }
         
 3.  **Testing Flow**:
@@ -202,7 +200,10 @@ A video is included to demonstrate the API:
 *   **Postman Demo**: End-to-end flow (register, login, approve driver, set online, request/accept ride, update status, view earnings, admin tasks).
 *   **Edge Cases**: Handling invalid tokens, unapproved/offline drivers, and blocked users.
 
-Video link: \[Insert link or note it’s submitted separately\].
+Video links
+----------
+Google Drive: https://drive.google.com/file/d/1Cwowy6yqHdNW2W1U0MxIn4CUi0fOdX01/view?usp=sharing
+Youtube Link: https://www.youtube.com/watch?v=uzHw-o8j9rE
 
 Deployment
 ----------
