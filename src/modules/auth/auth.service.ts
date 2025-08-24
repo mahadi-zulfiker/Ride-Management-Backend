@@ -8,8 +8,10 @@ export const register = async (data: {
   name: string;
   role: string;
   vehicleInfo?: { type: string; licensePlate: string };
+  phone?: string;
+  emergencyContact?: string;
 }) => {
-  const { email, password, name, role, vehicleInfo } = data;
+  const { email, password, name, role, vehicleInfo, phone, emergencyContact } = data;
 
   const existingUser = await User.findOne({ email });
   if (existingUser) {
@@ -17,7 +19,7 @@ export const register = async (data: {
   }
 
   const hashedPassword = await bcrypt.hash(password, 10);
-  const userData: any = { email, password: hashedPassword, name, role };
+  const userData: any = { email, password: hashedPassword, name, role, phone, emergencyContact };
 
   if (role === 'driver' && vehicleInfo) {
     userData.vehicleInfo = vehicleInfo;

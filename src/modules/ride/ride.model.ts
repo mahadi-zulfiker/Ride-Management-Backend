@@ -17,6 +17,8 @@ const rideSchema = new Schema({
     default: 'requested'
   },
   fare: { type: Number, default: 0 },
+  distance: { type: Number },
+  paymentMethod: { type: String, enum: ['cash', 'card', 'mobile'] },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
   statusHistory: [{

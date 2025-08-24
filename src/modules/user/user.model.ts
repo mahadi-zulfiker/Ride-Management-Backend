@@ -4,6 +4,8 @@ const userSchema = new Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   name: { type: String, required: true },
+  phone: { type: String },
+  emergencyContact: { type: String },
   role: { type: String, enum: ['admin', 'rider', 'driver'], required: true },
   isBlocked: { type: Boolean, default: false },
   vehicleInfo: {
